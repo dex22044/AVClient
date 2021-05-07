@@ -6,7 +6,7 @@ MediaEncoder::MediaEncoder(int width, int height) {
     if(vCodec == NULL) { ErrorMessageBox("Failed to get X264 encoder."); exit(-1); }
 	vCodecCtx = avcodec_alloc_context3(vCodec);
     vCodecCtx->sample_fmt = AV_SAMPLE_FMT_S16;
-    vCodecCtx->bit_rate = 1 * 1000000; // 1Mbps
+    vCodecCtx->bit_rate = 5 * 1000000; // 5Mbps
     vCodecCtx->time_base = { 1, 30 };
     vCodecCtx->width = width;
     vCodecCtx->height = height;

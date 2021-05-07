@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AVClient.cpp" />
+    <ClCompile Include="MediaDecoder.cpp" />
     <ClCompile Include="MediaEncoder.cpp" />
     <ClCompile Include="MsgBoxes.cpp" />
     <ClCompile Include="ScreenCapture.cpp" />
@@ -271,6 +272,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUIBaseElements.h" />
+    <ClInclude Include="MediaDecoder.h" />
     <ClInclude Include="MediaEncoder.h" />
     <ClInclude Include="ScreenCapture.h" />
     <ClInclude Include="MsgBoxes.h" />

@@ -4,6 +4,7 @@
 #include "GUIBaseElements.h"
 #include "ScreenCapture.h"
 #include "MediaEncoder.h"
+#include "MediaDecoder.h"
 #include <thread>
 #include "MsgBoxes.h"
 
@@ -23,10 +24,12 @@ int mouseY;
 bool mousePressed;
 SDL_KeyboardEvent key;
 
+unsigned char* displayImageData;
 SDL_Texture* displayImage;
 
 ScreenCapture* screenCaptureModule;
 MediaEncoder* encoderModule;
+MediaDecoder* decoderModule;
 
 void DrawGUILayer(SDL_Renderer* renderer) {
 	tabBox->update(mouseX, mouseY, mousePressed, key);
@@ -56,10 +59,27 @@ void ScreenCaptureThread() {
 			frame->data[2][i] = screenCaptureModule->pixels[i * 4 + 2];
 		}
 
-		AVPacket pkt = *encoderModule->EncodeVideoFrame(frame);
-		printf("Frame encoded, size: %d bytes;\n", pkt.size);
+		AVPacket* pktptr = encoderModule->EncodeVideoFrame(frame);
+		if (pktptr != NULL) {
+			AVPacket pkt = *pktptr;
+			printf("Frame encoded, size: %d bytes;\n", pkt.size);
 
-		av_free_packet(&pkt);
+			{
+				AVFrame* frame = decoderModule->DecodeVideoFrame(pkt);
+				if (frame != NULL) {
+					for (uint64_t i = 0; i < len; i++) {
+						displayImageData[i * 4 + 0] = frame->data[0][i];
+						displayImageData[i * 4 + 1] = frame->data[1][i];
+						displayImageData[i * 4 + 2] = frame->data[2][i];
+						displayImageData[i * 4 + 3] = 255;
+					}
+					av_frame_unref(frame);
+					av_frame_free(&frame);
+				}
+			}
+
+			av_free_packet(&pkt);
+		}
 	}
 }
 
@@ -74,11 +94,14 @@ int main(int argc, char** argv)
 	screenCaptureModule->InitCapture();
 
 	encoderModule = new MediaEncoder(screenCaptureModule->mode.Width, screenCaptureModule->mode.Height);
+	decoderModule = new MediaDecoder(screenCaptureModule->mode.Width, screenCaptureModule->mode.Height);
 
 	mainWindow = SDL_CreateWindow("AVClient", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, SDL_WINDOW_RESIZABLE);
 	mainRenderer = SDL_CreateRenderer(mainWindow, -1, SDL_RENDERER_SOFTWARE);
 
 	displayImage = SDL_CreateTexture(mainRenderer, SDL_PIXELFORMAT_BGRA32, SDL_TEXTUREACCESS_STREAMING, screenCaptureModule->mode.Width, screenCaptureModule->mode.Height);
+
+	displayImageData = (unsigned char*)malloc(screenCaptureModule->mode.Width * screenCaptureModule->mode.Height * 4);
 
 	std::thread capThr(ScreenCaptureThread);
 
@@ -217,7 +240,7 @@ int main(int argc, char** argv)
 		remoteImageBox->rect.w = ww;
 		remoteImageBox->rect.h = wh - 30;
 
-		SDL_UpdateTexture(displayImage, NULL, screenCaptureModule->pixels, screenCaptureModule->mode.Width * 4);
+		SDL_UpdateTexture(displayImage, NULL, displayImageData, screenCaptureModule->mode.Width * 4);
 
 		SDL_SetRenderDrawColor(mainRenderer, 255, 255, 255, 255);
 		SDL_RenderClear(mainRenderer);

@@ -31,6 +31,9 @@
     <ClCompile Include="MsgBoxes.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="MediaDecoder.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="E:\sdl\SDL2_ttf-2.0.15\lib\x64\libfreetype-6.dll">
@@ -152,6 +155,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="MsgBoxes.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MediaDecoder.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
