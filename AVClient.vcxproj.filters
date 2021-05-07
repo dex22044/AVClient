@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="DLLs">
+      <UniqueIdentifier>{aa628371-e747-450d-aa99-56d724b955fc}</UniqueIdentifier>
+      <Extensions>dll</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AVClient.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenCapture.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="MediaEncoder.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgBoxes.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\sdl\SDL2_ttf-2.0.15\lib\x64\libfreetype-6.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\sdl\SDL2\lib\x64\SDL2.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\sdl\SDL2_ttf-2.0.15\lib\x64\SDL2_ttf.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\sdl\SDL2_ttf-2.0.15\lib\x64\zlib1.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libopus-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libvorbisenc-2.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libvorbis-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libvorbisfile-3.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libogg-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libgmpxx-4.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libgmp-10.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libfdk-aac-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\avcodec-56.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\avfilter-5.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\avformat-56.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\avresample-2.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\avutil-54.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\swscale-3.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\avdevice-55.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libwebp-4.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libwebpdecoder-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libwebpdemux-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libwebpmux-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libpng16-16.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libjpeg-62.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libturbojpeg-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libexpat-1.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\zlib1.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libx264-142.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libvo-aacenc-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libvo-amrwbenc-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libopencore-amrnb-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libopencore-amrwb-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+    <None Include="E:\libav\11.3\win64\usr\bin\libmp3lame-0.dll">
+      <Filter>DLLs</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="arial.ttf">
+      <Filter>Файлы ресурсов</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GUIBaseElements.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenCapture.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MediaEncoder.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgBoxes.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Desktop\img.bmp">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
